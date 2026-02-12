@@ -78,7 +78,7 @@ function navigateTo(pageNumber) {
         state.currentPage = pageNumber;
         if (pageNumber === 5) resetEnvelope();
         if (pageNumber === 3) startFallingPetals();
-    }, 5000);
+    }, 400);
 }
 
 function handleYesClick() {
@@ -91,7 +91,7 @@ function handleNoClick() {
     const noBtn = elements.noBtn;
 
     noBtn.classList.add('shake');
-    setTimeout(() => noBtn.classList.remove('shake'), 1000);
+    setTimeout(() => noBtn.classList.remove('shake'), 500);
 
     if (state.noClickCount <= 2) {
         elements.noEscapeText.textContent = CONFIG.noEscapeTexts[state.noClickCount - 1];
@@ -106,12 +106,13 @@ function handleNoClick() {
 function handleTakeBouquet() {
     if (state.bouquetTaken) return;
     state.bouquetTaken = true;
+    elements.bouquet.classList.add('bounce');
     setTimeout(() => {
         elements.bouquet.classList.remove('bounce');
         elements.bouquetMessage.classList.remove('hidden');
         elements.takeBouquet.classList.add('hidden');
         elements.nextToPage4.classList.remove('hidden');
-    }, 5000);
+    }, 800);
 }
 
 let petalInterval;
@@ -119,7 +120,7 @@ function startFallingPetals() {
     elements.petalsContainer.innerHTML = '';
     for (let i = 0; i < 15; i++) setTimeout(() => createPetal(), i * 200);
     if (petalInterval) clearInterval(petalInterval);
-    petalInterval = setInterval(() => { if (state.currentPage === 3) createPetal(); }, 5000);
+    petalInterval = setInterval(() => { if (state.currentPage === 3) createPetal(); }, 600);
 }
 
 function createPetal() {
@@ -358,6 +359,19 @@ function initMouseTrail() {
         setTimeout(() => heart.remove(), 1000);
     });
 }
+
+elements.bouquet.addEventListener('click', () => {
+    if (state.bouquetTaken) return;
+
+    state.bouquetTaken = true;
+    elements.bouquet.classList.add('bounce');
+
+    setTimeout(() => {
+        elements.bouquet.classList.remove('bounce');
+        elements.bouquetMessage.classList.remove('hidden');
+        elements.nextToPage4.classList.remove('hidden');
+    }, 800);
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     applyConfig();
