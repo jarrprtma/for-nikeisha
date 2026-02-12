@@ -16,6 +16,8 @@
     --glass-shadow: 0 8px 32px rgba(219, 39, 119, 0.15);
     --font-main: 'Quicksand', sans-serif;
     --font-cursive: 'Dancing Script', cursive;
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 *,
@@ -117,6 +119,23 @@ body {
 
 @keyframes float {
 
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(30px, -30px) scale(1.05);
+    }
+
+    50% {
+        transform: translate(-20px, 20px) scale(0.95);
+    }
+
+    75% {
+        transform: translate(20px, 10px) scale(1.02);
+    }
+}
 
 #heartCanvas {
     position: fixed;
@@ -321,6 +340,17 @@ body {
     animation-delay: 1s;
 }
 
+@keyframes floatHeart {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+}
 
 .title-main {
     font-family: var(--font-cursive);
@@ -478,29 +508,30 @@ body {
 }
 
 @keyframes shake {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateX(0);
     }
-    20% {
-        transform: translateX(-4px);
+
+    25% {
+        transform: translateX(-12px);
     }
-    40% {
-        transform: translateX(4px);
-    }
-    60% {
-        transform: translateX(-3px);
-    }
-    80% {
-        transform: translateX(3px);
+
+    75% {
+        transform: translateX(12px);
     }
 }
 
 .btn.shake {
     animation: shake 4s ease;
-    will-change: transform;
 }
 
-
+.emoji-bounce {
+    font-size: 3.5rem;
+    margin-bottom: 16px;
+    animation: emojiBounce 4s ease-in-out infinite;
+}
 
 @keyframes emojiBounce {
 
@@ -706,7 +737,7 @@ body {
 }
 
 .bouquet.bounce {
-    animation: bouquetBounce 0.8s var(--ease-bounce);
+    animation: bouquetBounce 4s var(--ease-bounce);
 }
 
 @keyframes bouquetBounce {
@@ -1531,4 +1562,4 @@ body {
     .envelope.opened .letter {
         transform: translateY(-160px) scale(1.15);
     }
-  }
+                             }
