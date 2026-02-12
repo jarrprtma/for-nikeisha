@@ -117,23 +117,6 @@ body {
 
 @keyframes float {
 
-    0%,
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
-
-    25% {
-        transform: translate(30px, -30px) scale(1.05);
-    }
-
-    50% {
-        transform: translate(-20px, 20px) scale(0.95);
-    }
-
-    75% {
-        transform: translate(20px, 10px) scale(1.02);
-    }
-}
 
 #heartCanvas {
     position: fixed;
@@ -338,17 +321,6 @@ body {
     animation-delay: 1s;
 }
 
-@keyframes floatHeart {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(-5deg);
-    }
-
-    50% {
-        transform: translateY(-15px) rotate(5deg);
-    }
-}
 
 .title-main {
     font-family: var(--font-cursive);
@@ -524,7 +496,7 @@ body {
 }
 
 .btn.shake {
-    animation: shake 0.4s ease;
+    animation: shake 4s ease;
     will-change: transform;
 }
 
