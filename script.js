@@ -91,7 +91,7 @@ function handleNoClick() {
     const noBtn = elements.noBtn;
 
     noBtn.classList.add('shake');
-    setTimeout(() => noBtn.classList.remove('shake'), 500);
+    setTimeout(() => noBtn.classList.remove('shake'), 1000);
 
     if (state.noClickCount <= 2) {
         elements.noEscapeText.textContent = CONFIG.noEscapeTexts[state.noClickCount - 1];
@@ -106,7 +106,6 @@ function handleNoClick() {
 function handleTakeBouquet() {
     if (state.bouquetTaken) return;
     state.bouquetTaken = true;
-    elements.bouquet.classList.add('bounce');
     setTimeout(() => {
         elements.bouquet.classList.remove('bounce');
         elements.bouquetMessage.classList.remove('hidden');
