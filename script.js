@@ -17,7 +17,11 @@ const CONFIG = {
     collageSubtitle: "Sejak kamu hadir, hal sederhana pun terasa istimewa. Happy Valentine, my favorite person. 💕",
     nextCollageButton: "Satu halaman lagi… ",
     finalTitle: "Happy Valentine, My Love 💞",
-    finalMessage: `Makasih ya sudah hadir dan bikin hariku selalu terasa cukup. Kamu adalah alasan kenapa senyum itu mudah muncul. Semoga hari harimu selalu penuh kehangatan dan kebahagiaan. Aku selalu ada untukmu. Happy Valentine 💕`,
+    finalMessage: `Makasih ya sayangg pernahh adaaa di dalam hatii aku, kamu benar benar membuat hatiku bisa jatuh cinta lagi.
+                           bersama kamu, aku benar benar merasakan apa itu rasanya di cintai, di hargai, bahkan di dengar. aku juga bisa cerita ini itu tanpa harus merasa di banding bandingkan,
+                           tanpa di pojokkan bahkan di hakimi. bersama kamu aku benarrr benarrr merasaaa di cintaii, jadi izinkan aku buat memiliki mu untuk sekarang, besok, dan selamanya. happy valentine istri aku,
+                           makasih ya buat selalu ada di hidup aku, mau nerima aku apa adanya, selalu ada di samping aku di saat aku benar benar butuh itu, dan sayang sama aku.
+                        `,
     restartButton: "Restart ",
     copyButton: "Copy Message ",
     copySuccess: "Pesan berhasil dicopy! "
